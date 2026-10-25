@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+
+    <title>Encuesta de hábitos de consumo de energía</title>
+
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+
+<body class="container py-3">
+
+    <!-- ENCABEZADO Y NAVEGACIÓN -->
+
+    <header class="p-4 mb-4 bg-primary text-white rounded">
+
+        <h1>Encuesta de hábitos de consumo de energía</h1>
+
+        <p>
+            Conozcamos cómo utilizamos la electricidad
+            en nuestros hogares y qué podemos hacer
+            para ahorrar energía.
+        </p>
+
+        <nav class="nav nav-pills"
+                aria-label="Navegación principal">
+
+            <a class="nav-link text-white"
+                href="index.html">Inicio</a>
+
+            <a class="nav-link text-white"
+                href="equipos.html">Equipos de mi casa</a>
+
+            <a class="nav-link text-white"
+                href="registro.html">Registrar un equipo</a>
+
+            <a class="nav-link text-white"
+                href="mi-factura.html">Mi factura</a>
+
+            <a class="nav-link text-white"
+                href="encuesta.html">Encuesta</a>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- INTRODUCCIÓN -->
+
+        <section class="mb-4">
+
+            <h2>¿Cómo consumimos energía en casa?</h2>
+
+            <p>
+                Esta encuesta tiene como propósito
+                identificar los hábitos de consumo
+                de electricidad de una familia.
+                Las respuestas permiten reflexionar
+                sobre el uso de los electrodomésticos
+                y las posibilidades de ahorro energético.
+            </p>
+
+            <div class="alert alert-info" role="alert">
+                <strong>Instrucciones:</strong>
+                Completa los campos obligatorios
+                y selecciona las opciones que mejor
+                describan los hábitos de tu hogar.
+            </div>
+
+        </section>
+
+        <!-- FORMULARIO CON MÉTODO GET -->
+
+        <section>
+
+            <h2>Formulario de encuesta familiar</h2>
+
+            <form action="encuesta.html"
+                    method="get"
+                    class="card p-4">
+
+                <!-- GRUPO 1: INFORMACIÓN GENERAL -->
+
+                <fieldset class="mb-4">
+
+                    <legend class="h4">
+                        1. Información general
+                    </legend>
+
+                    <!-- CAMPO TEXT -->
+
+                    <div class="mb-3">
+
+                        <label for="nombre"
+                                class="form-label">
+                            Nombre o alias
+                        </label>
+
+                        <input type="text"
+                                class="form-control"
+                                id="nombre"
+                                name="nombre"
+                                placeholder="Escribe un nombre o alias"
+                                required>
+
+                    </div>
+
+                    <!-- CAMPO EMAIL -->
+
+                    <div class="mb-3">
+
+                        <label for="correo"
+                                class="form-label">
+                            Correo electrónico
+                        </label>
+
+                        <input type="email"
+                                class="form-control"
+                                id="correo"
+                                name="correo"
+                                placeholder="ejemplo@correo.com"
+                                required>
+
+                    </div>
+
+                    <!-- CAMPO NUMBER -->
+
+                    <div class="mb-3">
+
+                        <label for="personas"
+                                class="form-label">
+                            ¿Cuántas personas viven en tu hogar?
+                        </label>
+
+                        <input type="number"
+                                class="form-control"
+                                id="personas"
+                                name="personas"
+                                min="1"
+                                max="20"
+                                step="1"
+                                required>
+
+                    </div>
+
+                </fieldset>
+
+                <!-- GRUPO 2: HÁBITOS DE CONSUMO -->
+
+                <fieldset class="mb-4">
+
+                    <legend class="h4">
+                        2. Hábitos de consumo energético
+                    </legend>
+
+                    <!-- CAMPO RANGE -->
+
+                    <div class="mb-4">
+
+                        <label for="ahorro"
+                                class="form-label">
+                            Del 1 al 10, ¿qué tanto procuras
+                            ahorrar energía en tu hogar?
+                        </label>
+
+                        <input type="range"
+                                class="form-range"
+                                id="ahorro"
+                                name="ahorro"
+                                min="1"
+                                max="10"
+                                step="1"
+                                value="5">
+
+                        <p class="text-secondary">
+                            1 = Casi nunca.
+                            10 = Siempre.
+                        </p>
+
+                    </div>
+
+                    <!-- CAMPO SELECT -->
+
+                    <div class="mb-4">
+
+                        <label for="equipo"
+                                class="form-label">
+                            ¿Qué electrodoméstico utilizas
+                            con mayor frecuencia?
+                        </label>
+
+                        <select class="form-select"
+                                id="equipo"
+                                name="equipo"
+                                required>
+
+                            <option value="">
+                                Selecciona una opción
+                            </option>
+
+                            <option value="nevera">
+                                Nevera
+                            </option>
+
+                            <option value="televisor">
+                                Televisor
+                            </option>
+
+                            <option value="computador">
+                                Computador
+                            </option>
+
+                            <option value="lavadora">
+                                Lavadora
+                            </option>
+
+                            <option value="otro">
+                                Otro
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- CAMPOS RADIO -->
+
+                    <fieldset class="mb-4">
+
+                        <legend class="h5">
+                            ¿Apagas las luces cuando
+                            sales de una habitación?
+                        </legend>
+
+                        <div class="form-check">
+
+                            <input class="form-check-input"
+                                    type="radio"
+                                    id="luces-si"
+                                    name="apaga_luces"
+                                    value="si"
+                                    required>
+
+                            <label class="form-check-label"
+                                    for="luces-si">
+                                Sí
+                            </label>
+
+                        </div>
+
+                        <div class="form-check">
+
+                            <input class="form-check-input"
+                                    type="radio"
+                                    id="luces-no"
+                                    name="apaga_luces"
+                                    value="no">
+
+                            <label class="form-check-label"
+                                    for="luces-no">
+                                No
+                            </label>
+
+                        </div>
+
+                    </fieldset>
+
+                    <!-- CAMPOS CHECKBOX -->
+
+                    <fieldset class="mb-4">
+
+                        <legend class="h5">
+                            ¿Cuáles de estos hábitos de
+                            ahorro practicas en casa?
+                        </legend>
+
+                        <div class="form-check">
+
+                            <input class="form-check-input"
+                                    type="checkbox"
+                                    id="desconectar"
+                                    name="habito_desconectar"
+                                    value="si">
+
+                            <label class="form-check-label"
+                                    for="desconectar">
+                                Desconectar equipos
+                                que no estoy utilizando.
+                            </label>
+
+                        </div>
+
+                        <div class="form-check">
+
+                            <input class="form-check-input"
+                                    type="checkbox"
+                                    id="luz-natural"
+                                    name="habito_luz_natural"
+                                    value="si">
+
+                            <label class="form-check-label"
+                                    for="luz-natural">
+                                Aprovechar la luz natural.
+                            </label>
+
+                        </div>
+
+                        <div class="form-check">
+
+                            <input class="form-check-input"
+                                    type="checkbox"
+                                    id="bombillos"
+                                    name="habito_bombillos"
+                                    value="si">
+
+                            <label class="form-check-label"
+                                    for="bombillos">
+                                Utilizar bombillos LED.
+                            </label>
+
+                        </div>
+
+                    </fieldset>
+
+                </fieldset>
+
+                <!-- GRUPO 3: OPINIÓN PERSONAL -->
+
+                <fieldset class="mb-4">
+
+                    <legend class="h4">
+                        3. Opinión y recomendaciones
+                    </legend>
+
+                    <!-- CAMPO TEXTAREA -->
+
+                    <div class="mb-3">
+
+                        <label for="recomendacion"
+                                class="form-label">
+                            ¿Qué recomendarías a tu familia
+                            para reducir el consumo de energía?
+                        </label>
+
+                        <textarea class="form-control"
+                                    id="recomendacion"
+                                    name="recomendacion"
+                                    rows="4"
+                                    placeholder="Escribe aquí tu recomendación..."
+                                    required></textarea>
+
+                    </div>
+
+                </fieldset>
+
+                <!-- BOTONES -->
+
+                <div class="d-flex gap-2 flex-wrap">
+
+                    <button type="submit"
+                            class="btn btn-primary">
+                        Enviar encuesta
+                    </button>
+
+                    <button type="reset"
+                            class="btn btn-outline-secondary">
+                        Limpiar formulario
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+        <!-- EXPLICACIÓN DEL ENVÍO -->
+
+        <section class="mt-4">
+
+            <h2>¿Cómo funciona esta encuesta?</h2>
+
+            <p>
+                Este formulario utiliza el método GET
+                de HTML5. Al enviarlo, el navegador
+                incorpora los datos de la encuesta
+                como parámetros en la dirección URL.
+            </p>
+
+            <p>
+                La actividad permite comprender cómo
+                un formulario recopila y transmite
+                información. Este ejemplo no almacena
+                las respuestas en una base de datos.
+            </p>
+
+            <p class="text-secondary">
+                Para realizar pruebas, utiliza datos
+                de ejemplo y evita ingresar información
+                personal sensible, porque las respuestas
+                aparecen en la dirección del navegador.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer class="mt-4">
+
+        <p>
+            Ingeniería Web I - IU Digital de Antioquia - 2026-2
+        </p>
+
+    </footer>
+
+</body>
+</html>
